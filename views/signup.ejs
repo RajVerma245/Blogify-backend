@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>SignUp Page</title>
+</head>
+<body>   
+    <%- include('./partials/nav') %>
+    
+    <div class="container" style="margin-top: 80px;">
+          <form method="post" action="/users/signup">
+                <div class="mb-3">
+                    <label for="userfullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" id="userfullName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="useremail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="useremail" aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="userpasswor" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="userpassword" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>

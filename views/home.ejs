@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>HomePage</title>
+</head>
+<body>   
+    <%- include('./partials/nav') %>   
+    
+   <% if (locals.user) { %>
+        <div class="container mt-5" style="display: flex;">
+        <% blogs.forEach(b => { %>
+            <span class="card m-3" style="width: 18rem;">
+                <img src="<%= b.coverImage %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= b.title %></h5>
+                    <p class="card-text"><%= b.body.slice(0, 100) %></p>
+                    <a href="/blog/<%= b.id %>" class="btn btn-primary">View</a>
+                </div>
+            </span>
+        <% }) %>
+    </div>
+   <% } %> 
+
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>
